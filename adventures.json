@@ -18,11 +18,12 @@
       "title": "The Serpent's Secret",
       "kicker": "MAGIC · MYSTERY · SECRETS",
       "description": "Behind the castle walls, a forbidden mystery awaits. Every clue brings you closer to the truth.",
-      "status": "coming-soon",
+      "status": "available",
       "theme": "sorcery",
       "sigil": "♜",
       "symbol": "✧",
-      "comingText": "The gates are still sealed"
+      "url": "https://adventures.pamsprogramming.com/serpent/",
+      "buttonText": "Enter the Forbidden Wing"
     },
     {
       "id": "inventor",

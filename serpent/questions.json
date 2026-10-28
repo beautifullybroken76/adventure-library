@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "questions": [
+    {
+      "id": "serpent-c1-001",
+      "chapter": 1,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which sentence uses a semicolon correctly?",
+      "answers": [
+        "The corridor was dark; the torches had gone out.",
+        "The corridor; was dark and silent.",
+        "The corridor was; dark, silent, and cold.",
+        "The corridor was dark; because the torches failed."
+      ],
+      "correct": 0,
+      "hint": "A semicolon joins two complete thoughts.",
+      "explain": "Both sides of the semicolon can stand alone as sentences."
+    },
+    {
+      "id": "serpent-c1-002",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "The door has 4 rows of 7 silver studs. How many studs are there?",
+      "answers": [
+        "11",
+        "21",
+        "28",
+        "32"
+      ],
+      "correct": 2,
+      "hint": "Multiply the number of rows by the studs per row.",
+      "explain": "4 × 7 = 28."
+    },
+    {
+      "id": "serpent-c1-003",
+      "chapter": 1,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "Read the inscription. What does “reluctantly” suggest?",
+      "answers": [
+        "The door opens eagerly.",
+        "The door opens unwillingly.",
+        "The door opens noisily.",
+        "The door opens instantly."
+      ],
+      "correct": 1,
+      "hint": "Think about how someone behaves when they do not want to do something.",
+      "explain": "Reluctantly means unwillingly or with hesitation.",
+      "passage": "“The door yielded reluctantly, as though it regretted every inch.”"
+    },
+    {
+      "id": "serpent-c1-004",
+      "chapter": 1,
+      "skill": "science",
+      "difficulty": "apprentice",
+      "question": "A torch burns for 20 minutes with one unit of fuel. At the same constant rate, how long will 3 units last?",
+      "answers": [
+        "23 minutes",
+        "40 minutes",
+        "60 minutes",
+        "80 minutes"
+      ],
+      "correct": 2,
+      "hint": "Assume fuel use stays constant.",
+      "explain": "3 × 20 = 60 minutes."
+    },
+    {
+      "id": "serpent-c1-005",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "A code is 3 times a number plus 5. The code reads 26. What is the number?",
+      "answers": [
+        "5",
+        "7",
+        "9",
+        "11"
+      ],
+      "correct": 1,
+      "hint": "Solve 3x + 5 = 26.",
+      "explain": "Subtract 5 to get 21; divide by 3 to get 7."
+    },
+    {
+      "id": "serpent-c2-006",
+      "chapter": 2,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "Which statement best summarizes the passage?",
+      "answers": [
+        "All history books are accurate.",
+        "A historian should examine evidence and competing accounts.",
+        "The oldest source is always correct.",
+        "Eyewitnesses never make mistakes."
+      ],
+      "correct": 1,
+      "hint": "Look for the central idea, not a minor detail.",
+      "explain": "The passage emphasizes comparing sources and evaluating evidence.",
+      "passage": "“An honest historian compares accounts, questions omissions, and tests claims against the evidence. One voice is rarely enough.”"
+    },
+    {
+      "id": "serpent-c2-007",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Choose the sentence with correct subject–verb agreement.",
+      "answers": [
+        "The collection of maps are missing.",
+        "The collection of maps is missing.",
+        "The maps in the collection is missing.",
+        "The collection of maps were missing."
+      ],
+      "correct": 1,
+      "hint": "The subject is “collection,” not “maps.”",
+      "explain": "Collection is singular, so it takes “is.”"
+    },
+    {
+      "id": "serpent-c2-008",
+      "chapter": 2,
+      "skill": "science",
+      "difficulty": "investigator",
+      "question": "Two identical candles burn in sealed jars. Jar A has twice as much air as Jar B. Which is the best prediction?",
+      "answers": [
+        "A will likely burn longer.",
+        "B will certainly burn longer.",
+        "Both must burn forever.",
+        "Neither candle uses oxygen."
+      ],
+      "correct": 0,
+      "hint": "Fire needs oxygen.",
+      "explain": "The larger supply of air generally provides more oxygen for combustion, all else equal."
+    },
+    {
+      "id": "serpent-c2-009",
+      "chapter": 2,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "A library shelf holds 48 books. Three-eighths are histories. How many histories are there?",
+      "answers": [
+        "12",
+        "16",
+        "18",
+        "24"
+      ],
+      "correct": 2,
+      "hint": "Find one eighth first.",
+      "explain": "48 ÷ 8 = 6; 6 × 3 = 18."
+    },
+    {
+      "id": "serpent-c2-010",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which revision is most concise without changing the meaning?",
+      "answers": [
+        "Due to the fact that the key was lost, the vault remained closed.",
+        "Because the key was lost, the vault remained closed.",
+        "The vault, which was closed, remained closed because of a key.",
+        "The key being lost was the reason for the vault’s closure."
+      ],
+      "correct": 1,
+      "hint": "Replace a wordy phrase with a simpler conjunction.",
+      "explain": "“Because” conveys the same cause more directly."
+    },
+    {
+      "id": "serpent-c3-011",
+      "chapter": 3,
+      "skill": "science",
+      "difficulty": "investigator",
+      "question": "A plant grows 2 cm in week 1, 3 cm in week 2, and 4 cm in week 3. What was its total growth?",
+      "answers": [
+        "4 cm",
+        "7 cm",
+        "9 cm",
+        "12 cm"
+      ],
+      "correct": 2,
+      "hint": "Add the growth for all three weeks.",
+      "explain": "2 + 3 + 4 = 9 cm."
+    },
+    {
+      "id": "serpent-c3-012",
+      "chapter": 3,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "What is the narrator’s attitude toward the garden?",
+      "answers": [
+        "Indifferent",
+        "Curious but uneasy",
+        "Completely delighted",
+        "Angry at the gardener"
+      ],
+      "correct": 1,
+      "hint": "Notice the contrast between fascination and unease.",
+      "explain": "“Fascinated” signals curiosity; “unsettled” signals unease.",
+      "passage": "“I was fascinated by the blue leaves, though the way they turned toward me left me deeply unsettled.”"
+    },
+    {
+      "id": "serpent-c3-013",
+      "chapter": 3,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "A rectangular greenhouse is 9 m long and 6 m wide. What is its area?",
+      "answers": [
+        "15 m²",
+        "30 m²",
+        "54 m²",
+        "60 m²"
+      ],
+      "correct": 2,
+      "hint": "Area = length × width.",
+      "explain": "9 × 6 = 54 square meters."
+    },
+    {
+      "id": "serpent-c3-014",
+      "chapter": 3,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which word best completes the sentence? “Neither the roses nor the ivy ___ thriving.”",
+      "answers": [
+        "are",
+        "were",
+        "is",
+        "have"
+      ],
+      "correct": 2,
+      "hint": "With “neither…nor,” the verb agrees with the closer subject.",
+      "explain": "Ivy is singular, so “is” is correct."
+    },
+    {
+      "id": "serpent-c3-015",
+      "chapter": 3,
+      "skill": "science",
+      "difficulty": "challenge",
+      "question": "A researcher changes only the amount of light plants receive and measures their height. What is the independent variable?",
+      "answers": [
+        "Plant height",
+        "Amount of light",
+        "Pot material",
+        "Final number of leaves"
+      ],
+      "correct": 1,
+      "hint": "Which factor does the researcher deliberately change?",
+      "explain": "The independent variable is the amount of light."
+    },
+    {
+      "id": "serpent-c4-016",
+      "chapter": 4,
+      "skill": "reading",
+      "difficulty": "apprentice",
+      "question": "What does the passage imply about the gardener?",
+      "answers": [
+        "She follows rules without question.",
+        "She suspects the rules hide something important.",
+        "She cannot read the rules.",
+        "She wrote all the rules herself."
+      ],
+      "correct": 1,
+      "hint": "Pay attention to what she does after reading the warning.",
+      "explain": "Her decision to investigate suggests she suspects a hidden truth.",
+      "passage": "“The notice forbade entry after dusk. Mara read it twice, then tucked a lantern into her coat.”"
+    },
+    {
+      "id": "serpent-c4-017",
+      "chapter": 4,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "The vault wheel turns 15° each time you press a lever. How many presses make a 90° turn?",
+      "answers": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct": 1,
+      "hint": "Divide the total angle by the angle per press.",
+      "explain": "90 ÷ 15 = 6 presses."
+    },
+    {
+      "id": "serpent-c4-018",
+      "chapter": 4,
+      "skill": "science",
+      "difficulty": "challenge",
+      "question": "A pendulum swings 12 times in 24 seconds. What is its average frequency?",
+      "answers": [
+        "0.5 swings per second",
+        "2 swings per second",
+        "12 swings per second",
+        "24 swings per second"
+      ],
+      "correct": 0,
+      "hint": "Frequency = number of swings ÷ seconds.",
+      "explain": "12 ÷ 24 = 0.5 swings per second."
+    },
+    {
+      "id": "serpent-c4-019",
+      "chapter": 4,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which sentence correctly uses a colon?",
+      "answers": [
+        "The vault contains: a compass and a key.",
+        "The vault contains two things: a compass and a key.",
+        "The vault: contains a compass and a key.",
+        "The vault contains two: things a compass and a key."
+      ],
+      "correct": 1,
+      "hint": "A colon can introduce a list after a complete sentence.",
+      "explain": "“The vault contains two things” is complete before the colon."
+    },
+    {
+      "id": "serpent-c4-020",
+      "chapter": 4,
+      "skill": "reading",
+      "difficulty": "investigator",
+      "question": "Which detail best supports the idea that the mechanism is ancient?",
+      "answers": [
+        "The gears are made of iron.",
+        "The floor is cold.",
+        "Dust has filled the carved dates for centuries.",
+        "A lever sits near the door."
+      ],
+      "correct": 2,
+      "hint": "Look for direct evidence of great age.",
+      "explain": "Centuries of dust and carved dates most directly indicate age."
+    },
+    {
+      "id": "serpent-c5-021",
+      "chapter": 5,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "Which is the central conflict in the passage?",
+      "answers": [
+        "The guardian must choose between safety and freedom.",
+        "The guardian has lost a map.",
+        "The guardian wants to repair a clock.",
+        "The guardian dislikes the castle."
+      ],
+      "correct": 0,
+      "hint": "Identify the difficult choice driving the story.",
+      "explain": "The choice between protecting people and allowing them freedom is the main conflict.",
+      "passage": "“I can keep them safe,” the guardian said, “but only by locking every door. If I open them, they may stumble—and they may finally grow.”"
+    },
+    {
+      "id": "serpent-c5-022",
+      "chapter": 5,
+      "skill": "science",
+      "difficulty": "apprentice",
+      "question": "Two identical seeds are planted. One gets water and light; the other gets light but no water. What conclusion is best supported if only the first sprouts?",
+      "answers": [
+        "Water may be necessary for sprouting in these conditions.",
+        "Sunlight prevents all seeds from sprouting.",
+        "All seeds grow at identical rates.",
+        "Soil is never needed by plants."
+      ],
+      "correct": 0,
+      "hint": "What is the one condition that differs?",
+      "explain": "Only water differs, so the result supports water’s role under these conditions."
+    },
+    {
+      "id": "serpent-c5-023",
+      "chapter": 5,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "A serpent coils into a circle with radius 3 cm. Using π ≈ 3.14, what is its circumference?",
+      "answers": [
+        "9.42 cm",
+        "12.56 cm",
+        "18.84 cm",
+        "28.26 cm"
+      ],
+      "correct": 2,
+      "hint": "Circumference = 2πr.",
+      "explain": "2 × 3.14 × 3 = 18.84 cm."
+    },
+    {
+      "id": "serpent-c5-024",
+      "chapter": 5,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Choose the sentence with the clearest pronoun reference.",
+      "answers": [
+        "When Mara told Elian she was ready, she smiled.",
+        "Mara smiled and told Elian, “I am ready.”",
+        "She told her that she was ready.",
+        "After speaking to her, she was ready."
+      ],
+      "correct": 1,
+      "hint": "Which version makes it unmistakable who is ready?",
+      "explain": "Direct quotation makes the speaker and meaning clear."
+    }
+  ]
+}
