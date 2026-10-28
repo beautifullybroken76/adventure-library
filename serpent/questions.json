@@ -389,6 +389,1476 @@
       "correct": 1,
       "hint": "Which version makes it unmistakable who is ready?",
       "explain": "Direct quotation makes the speaker and meaning clear."
+    },
+    {
+      "id": "serpent-c1-a-new01",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The sealed corridor has 5 rows of 4 rune tiles. How many tiles are there?",
+      "answers": [
+        "9",
+        "20",
+        "24",
+        "15"
+      ],
+      "correct": 1,
+      "hint": "Multiply rows by tiles per row.",
+      "explain": "5 × 4 = 20."
+    },
+    {
+      "id": "serpent-c1-a-new02",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The bronze door needs 4 gems for each of 5 locks. How many gems are needed?",
+      "answers": [
+        "20",
+        "9",
+        "24",
+        "5"
+      ],
+      "correct": 0,
+      "hint": "Multiply gems per lock by the number of locks.",
+      "explain": "4 × 5 = 20."
+    },
+    {
+      "id": "serpent-c1-a-new03",
+      "chapter": 1,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Choose the sentence with correct subject–verb agreement about the sealed corridor.",
+      "answers": [
+        "The torchs glows beneath the arch.",
+        "The torchs glow beneath the arch.",
+        "The torchs glowing beneath the arch.",
+        "The torchs has glowed beneath the arch."
+      ],
+      "correct": 1,
+      "hint": "A plural subject usually takes a verb without -s in the present tense.",
+      "explain": "“torchs” is plural, so “glow” agrees with it."
+    },
+    {
+      "id": "serpent-c1-a-new04",
+      "chapter": 1,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which sentence correctly uses a comma after an introductory phrase?",
+      "answers": [
+        "After sunset the bronze door, began to hum.",
+        "After sunset, the bronze door began to hum.",
+        "After, sunset the bronze door began to hum.",
+        "After sunset the, bronze door began to hum."
+      ],
+      "correct": 1,
+      "hint": "The introductory phrase ends before the main clause.",
+      "explain": "The comma follows “After sunset,” not the subject or verb."
+    },
+    {
+      "id": "serpent-c1-a-new05",
+      "chapter": 1,
+      "skill": "reading",
+      "difficulty": "apprentice",
+      "question": "According to the passage, what happens when Iona returns to the torch?",
+      "answers": [
+        "It vanishes.",
+        "It glows more brightly.",
+        "The door collapses.",
+        "It turns into a key."
+      ],
+      "correct": 1,
+      "hint": "Look for what happens after she returns.",
+      "explain": "The passage explicitly says its glow brightened when she returned.",
+      "passage": "At dawn, Iona found the torch beside the bronze door. Its glow faded whenever she stepped away, but brightened when she returned."
+    },
+    {
+      "id": "serpent-c1-a-new06",
+      "chapter": 1,
+      "skill": "science",
+      "difficulty": "apprentice",
+      "question": "What is the independent variable in this investigation?",
+      "answers": [
+        "Lamp type",
+        "Fog density",
+        "Distance scale",
+        "Number of observers"
+      ],
+      "correct": 1,
+      "hint": "Identify what the experimenter deliberately changes.",
+      "explain": "Fog density is deliberately varied; the other factors are held constant.",
+      "passage": "A student measures how far a light from the torch travels through fog. The student changes the fog density while keeping the lamp and distance scale the same."
+    },
+    {
+      "id": "serpent-c1-i-new01",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "Each rune costs 8 coins. The keeper buys 4, then receives a 3-coin discount. What is the final cost?",
+      "answers": [
+        "32",
+        "29",
+        "9",
+        "35"
+      ],
+      "correct": 1,
+      "hint": "Multiply before subtracting the discount.",
+      "explain": "8 × 4 − 3 = 29."
+    },
+    {
+      "id": "serpent-c1-i-new02",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "To open the bronze door, solve 3x + 3 = 18. What is x?",
+      "answers": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "correct": 2,
+      "hint": "Subtract 3, then divide by the coefficient.",
+      "explain": "18 − 3 = 15; divide by 3 to get x = 5."
+    },
+    {
+      "id": "serpent-c1-i-new03",
+      "chapter": 1,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which revision avoids a comma splice in the keeper’s report about the bronze door?",
+      "answers": [
+        "The bronze door shook, the guards fled.",
+        "The bronze door shook; the guards fled.",
+        "The bronze door shook, the guards, fled.",
+        "The bronze door shook the guards, fled."
+      ],
+      "correct": 1,
+      "hint": "Two independent clauses need more than a comma between them.",
+      "explain": "A semicolon correctly joins two closely related independent clauses."
+    },
+    {
+      "id": "serpent-c1-i-new04",
+      "chapter": 1,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which sentence is the most concise without losing meaning?",
+      "answers": [
+        "Due to the fact that the torch was broken, the door would not open.",
+        "The door would not open because the torch was broken.",
+        "It was because of the broken torch that the door did not have the ability to open.",
+        "The door, on account of the torch having been broken, did not open."
+      ],
+      "correct": 1,
+      "hint": "Prefer direct wording over unnecessary phrases.",
+      "explain": "“Because” is clearer and shorter than “due to the fact that.”"
+    },
+    {
+      "id": "serpent-c1-i-new05",
+      "chapter": 1,
+      "skill": "reading",
+      "difficulty": "investigator",
+      "question": "What is the strongest inference about the caretaker?",
+      "answers": [
+        "He is completely unconcerned.",
+        "He has never seen the object.",
+        "He may know more about its danger than he admits.",
+        "He wants visitors to touch it."
+      ],
+      "correct": 2,
+      "hint": "Compare his words with his actions.",
+      "explain": "His refusal to approach contradicts his claim that it is harmless.",
+      "passage": "The caretaker insisted the bronze door was harmless, yet he refused to stand near it. He watched the rune on its surface until the visitors had gone."
+    },
+    {
+      "id": "serpent-c1-i-new06",
+      "chapter": 1,
+      "skill": "science",
+      "difficulty": "investigator",
+      "question": "If the measured trend continues for one more minute, what light output is predicted?",
+      "answers": [
+        "0 units",
+        "3 units",
+        "6 units",
+        "12 units"
+      ],
+      "correct": 0,
+      "hint": "Find the constant change between consecutive measurements.",
+      "explain": "Output decreases by 3 units each minute; after 3 units comes 0.",
+      "passage": "In the sealed corridor, a crystal produces 12, 9, 6, and 3 units of light after 0, 1, 2, and 3 minutes, respectively, under constant conditions."
+    },
+    {
+      "id": "serpent-c1-c-new01",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "The sealed corridor has a rectangular floor measuring (4+x) by 6 units. Its area is 48 square units. Find x.",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "correct": 1,
+      "hint": "Area equals length times width; divide first.",
+      "explain": "48 ÷ 6 = 8; subtract 4 to get x = 4."
+    },
+    {
+      "id": "serpent-c1-c-new02",
+      "chapter": 1,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "A sequence on the bronze door begins 3, 7, 11, ... and increases by a constant amount. What is its sixth term?",
+      "answers": [
+        "19",
+        "23",
+        "27",
+        "24"
+      ],
+      "correct": 1,
+      "hint": "The sixth term is five increases after the first.",
+      "explain": "3 + 5(4) = 23."
+    },
+    {
+      "id": "serpent-c1-c-new03",
+      "chapter": 1,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Which sentence keeps the modifier closest to what it describes?",
+      "answers": [
+        "Covered in dust, Mara examined the bronze door.",
+        "Mara examined the bronze door covered in dust.",
+        "Examining the bronze door, the dust covered Mara.",
+        "The bronze door examined Mara, covered in dust."
+      ],
+      "correct": 1,
+      "hint": "Ask what is actually covered in dust.",
+      "explain": "Placing “covered in dust” immediately after “bronze door” makes the intended meaning clear."
+    },
+    {
+      "id": "serpent-c1-c-new04",
+      "chapter": 1,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Choose the revision with correct parallel structure.",
+      "answers": [
+        "The keeper promised to inspect the torch, repairing the lock, and that she would record the result.",
+        "The keeper promised inspecting the torch, to repair the lock, and recording the result.",
+        "The keeper promised to inspect the torch, to repair the lock, and to record the result.",
+        "The keeper promised to inspect the torch, repair of the lock, and to record the result."
+      ],
+      "correct": 2,
+      "hint": "Items in a series should use matching grammatical forms.",
+      "explain": "All three actions use the infinitive form: to inspect, to repair, and to record."
+    },
+    {
+      "id": "serpent-c1-c-new05",
+      "chapter": 1,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "What is the primary effect of the detail about silver dust?",
+      "answers": [
+        "It confirms the archivist has never entered.",
+        "It introduces evidence that challenges the archivist’s statement.",
+        "It proves the seal is made of gold.",
+        "It establishes that a century has passed since the conversation."
+      ],
+      "correct": 1,
+      "hint": "Ask whether the physical evidence supports or undermines the statement.",
+      "explain": "Fresh dust from behind the seal suggests someone may have accessed it recently, creating tension with the claim.",
+      "passage": "“No one has opened the bronze door in a century,” the archivist said. But her hands were stained with fresh silver dust, the kind found only behind its seal."
+    },
+    {
+      "id": "serpent-c1-c-new06",
+      "chapter": 1,
+      "skill": "science",
+      "difficulty": "challenge",
+      "question": "Which conclusion is best supported by the experiment?",
+      "answers": [
+        "Moving air may increase heat loss from the sample.",
+        "Moving air always makes objects hotter.",
+        "The samples began at different temperatures.",
+        "The heat source supplied more energy to sample B."
+      ],
+      "correct": 0,
+      "hint": "Compare the only stated difference between the setups.",
+      "explain": "Sample B warmed less when exposed to moving air, consistent with greater heat loss.",
+      "passage": "Two identical torch samples are heated for five minutes. Sample A is kept in an insulated box and rises 8°C. Sample B is exposed to moving air and rises 3°C. The heat source is the same."
+    },
+    {
+      "id": "serpent-c2-a-new01",
+      "chapter": 2,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The whispering archive has 6 rows of 5 cipher tiles. How many tiles are there?",
+      "answers": [
+        "11",
+        "30",
+        "35",
+        "24"
+      ],
+      "correct": 1,
+      "hint": "Multiply rows by tiles per row.",
+      "explain": "6 × 5 = 30."
+    },
+    {
+      "id": "serpent-c2-a-new02",
+      "chapter": 2,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The sealed manuscript needs 5 gems for each of 6 locks. How many gems are needed?",
+      "answers": [
+        "30",
+        "11",
+        "35",
+        "6"
+      ],
+      "correct": 0,
+      "hint": "Multiply gems per lock by the number of locks.",
+      "explain": "5 × 6 = 30."
+    },
+    {
+      "id": "serpent-c2-a-new03",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Choose the sentence with correct subject–verb agreement about the whispering archive.",
+      "answers": [
+        "The shelfs glows beneath the arch.",
+        "The shelfs glow beneath the arch.",
+        "The shelfs glowing beneath the arch.",
+        "The shelfs has glowed beneath the arch."
+      ],
+      "correct": 1,
+      "hint": "A plural subject usually takes a verb without -s in the present tense.",
+      "explain": "“shelfs” is plural, so “glow” agrees with it."
+    },
+    {
+      "id": "serpent-c2-a-new04",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which sentence correctly uses a comma after an introductory phrase?",
+      "answers": [
+        "After sunset the sealed manuscript, began to hum.",
+        "After sunset, the sealed manuscript began to hum.",
+        "After, sunset the sealed manuscript began to hum.",
+        "After sunset the, sealed manuscript began to hum."
+      ],
+      "correct": 1,
+      "hint": "The introductory phrase ends before the main clause.",
+      "explain": "The comma follows “After sunset,” not the subject or verb."
+    },
+    {
+      "id": "serpent-c2-a-new05",
+      "chapter": 2,
+      "skill": "reading",
+      "difficulty": "apprentice",
+      "question": "According to the passage, what happens when Iona returns to the shelf?",
+      "answers": [
+        "It vanishes.",
+        "It glows more brightly.",
+        "The door collapses.",
+        "It turns into a key."
+      ],
+      "correct": 1,
+      "hint": "Look for what happens after she returns.",
+      "explain": "The passage explicitly says its glow brightened when she returned.",
+      "passage": "At dawn, Iona found the shelf beside the sealed manuscript. Its glow faded whenever she stepped away, but brightened when she returned."
+    },
+    {
+      "id": "serpent-c2-a-new06",
+      "chapter": 2,
+      "skill": "science",
+      "difficulty": "apprentice",
+      "question": "What is the independent variable in this investigation?",
+      "answers": [
+        "Lamp type",
+        "Fog density",
+        "Distance scale",
+        "Number of observers"
+      ],
+      "correct": 1,
+      "hint": "Identify what the experimenter deliberately changes.",
+      "explain": "Fog density is deliberately varied; the other factors are held constant.",
+      "passage": "A student measures how far a light from the shelf travels through fog. The student changes the fog density while keeping the lamp and distance scale the same."
+    },
+    {
+      "id": "serpent-c2-i-new01",
+      "chapter": 2,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "Each cipher costs 9 coins. The keeper buys 5, then receives a 4-coin discount. What is the final cost?",
+      "answers": [
+        "45",
+        "41",
+        "10",
+        "49"
+      ],
+      "correct": 1,
+      "hint": "Multiply before subtracting the discount.",
+      "explain": "9 × 5 − 4 = 41."
+    },
+    {
+      "id": "serpent-c2-i-new02",
+      "chapter": 2,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "To open the sealed manuscript, solve 4x + 3 = 27. What is x?",
+      "answers": [
+        "5",
+        "8",
+        "6",
+        "7"
+      ],
+      "correct": 2,
+      "hint": "Subtract 3, then divide by the coefficient.",
+      "explain": "27 − 3 = 24; divide by 4 to get x = 6."
+    },
+    {
+      "id": "serpent-c2-i-new03",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which revision avoids a comma splice in the keeper’s report about the sealed manuscript?",
+      "answers": [
+        "The sealed manuscript shook, the guards fled.",
+        "The sealed manuscript shook; the guards fled.",
+        "The sealed manuscript shook, the guards, fled.",
+        "The sealed manuscript shook the guards, fled."
+      ],
+      "correct": 1,
+      "hint": "Two independent clauses need more than a comma between them.",
+      "explain": "A semicolon correctly joins two closely related independent clauses."
+    },
+    {
+      "id": "serpent-c2-i-new04",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which sentence is the most concise without losing meaning?",
+      "answers": [
+        "Due to the fact that the shelf was broken, the door would not open.",
+        "The door would not open because the shelf was broken.",
+        "It was because of the broken shelf that the door did not have the ability to open.",
+        "The door, on account of the shelf having been broken, did not open."
+      ],
+      "correct": 1,
+      "hint": "Prefer direct wording over unnecessary phrases.",
+      "explain": "“Because” is clearer and shorter than “due to the fact that.”"
+    },
+    {
+      "id": "serpent-c2-i-new05",
+      "chapter": 2,
+      "skill": "reading",
+      "difficulty": "investigator",
+      "question": "What is the strongest inference about the caretaker?",
+      "answers": [
+        "He is completely unconcerned.",
+        "He has never seen the object.",
+        "He may know more about its danger than he admits.",
+        "He wants visitors to touch it."
+      ],
+      "correct": 2,
+      "hint": "Compare his words with his actions.",
+      "explain": "His refusal to approach contradicts his claim that it is harmless.",
+      "passage": "The caretaker insisted the sealed manuscript was harmless, yet he refused to stand near it. He watched the cipher on its surface until the visitors had gone."
+    },
+    {
+      "id": "serpent-c2-i-new06",
+      "chapter": 2,
+      "skill": "science",
+      "difficulty": "investigator",
+      "question": "If the measured trend continues for one more minute, what light output is predicted?",
+      "answers": [
+        "0 units",
+        "3 units",
+        "6 units",
+        "12 units"
+      ],
+      "correct": 0,
+      "hint": "Find the constant change between consecutive measurements.",
+      "explain": "Output decreases by 3 units each minute; after 3 units comes 0.",
+      "passage": "In the whispering archive, a crystal produces 12, 9, 6, and 3 units of light after 0, 1, 2, and 3 minutes, respectively, under constant conditions."
+    },
+    {
+      "id": "serpent-c2-c-new01",
+      "chapter": 2,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "The whispering archive has a rectangular floor measuring (5+x) by 7 units. Its area is 63 square units. Find x.",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "9"
+      ],
+      "correct": 1,
+      "hint": "Area equals length times width; divide first.",
+      "explain": "63 ÷ 7 = 9; subtract 5 to get x = 4."
+    },
+    {
+      "id": "serpent-c2-c-new02",
+      "chapter": 2,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "A sequence on the sealed manuscript begins 4, 9, 14, ... and increases by a constant amount. What is its sixth term?",
+      "answers": [
+        "24",
+        "29",
+        "34",
+        "30"
+      ],
+      "correct": 1,
+      "hint": "The sixth term is five increases after the first.",
+      "explain": "4 + 5(5) = 29."
+    },
+    {
+      "id": "serpent-c2-c-new03",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Which sentence keeps the modifier closest to what it describes?",
+      "answers": [
+        "Covered in dust, Mara examined the sealed manuscript.",
+        "Mara examined the sealed manuscript covered in dust.",
+        "Examining the sealed manuscript, the dust covered Mara.",
+        "The sealed manuscript examined Mara, covered in dust."
+      ],
+      "correct": 1,
+      "hint": "Ask what is actually covered in dust.",
+      "explain": "Placing “covered in dust” immediately after “sealed manuscript” makes the intended meaning clear."
+    },
+    {
+      "id": "serpent-c2-c-new04",
+      "chapter": 2,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Choose the revision with correct parallel structure.",
+      "answers": [
+        "The keeper promised to inspect the shelf, repairing the lock, and that she would record the result.",
+        "The keeper promised inspecting the shelf, to repair the lock, and recording the result.",
+        "The keeper promised to inspect the shelf, to repair the lock, and to record the result.",
+        "The keeper promised to inspect the shelf, repair of the lock, and to record the result."
+      ],
+      "correct": 2,
+      "hint": "Items in a series should use matching grammatical forms.",
+      "explain": "All three actions use the infinitive form: to inspect, to repair, and to record."
+    },
+    {
+      "id": "serpent-c2-c-new05",
+      "chapter": 2,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "What is the primary effect of the detail about silver dust?",
+      "answers": [
+        "It confirms the archivist has never entered.",
+        "It introduces evidence that challenges the archivist’s statement.",
+        "It proves the seal is made of gold.",
+        "It establishes that a century has passed since the conversation."
+      ],
+      "correct": 1,
+      "hint": "Ask whether the physical evidence supports or undermines the statement.",
+      "explain": "Fresh dust from behind the seal suggests someone may have accessed it recently, creating tension with the claim.",
+      "passage": "“No one has opened the sealed manuscript in a century,” the archivist said. But her hands were stained with fresh silver dust, the kind found only behind its seal."
+    },
+    {
+      "id": "serpent-c2-c-new06",
+      "chapter": 2,
+      "skill": "science",
+      "difficulty": "challenge",
+      "question": "Which conclusion is best supported by the experiment?",
+      "answers": [
+        "Moving air may increase heat loss from the sample.",
+        "Moving air always makes objects hotter.",
+        "The samples began at different temperatures.",
+        "The heat source supplied more energy to sample B."
+      ],
+      "correct": 0,
+      "hint": "Compare the only stated difference between the setups.",
+      "explain": "Sample B warmed less when exposed to moving air, consistent with greater heat loss.",
+      "passage": "Two identical shelf samples are heated for five minutes. Sample A is kept in an insulated box and rises 8°C. Sample B is exposed to moving air and rises 3°C. The heat source is the same."
+    },
+    {
+      "id": "serpent-c3-a-new01",
+      "chapter": 3,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The mirror gallery has 7 rows of 6 sigil tiles. How many tiles are there?",
+      "answers": [
+        "13",
+        "42",
+        "48",
+        "35"
+      ],
+      "correct": 1,
+      "hint": "Multiply rows by tiles per row.",
+      "explain": "7 × 6 = 42."
+    },
+    {
+      "id": "serpent-c3-a-new02",
+      "chapter": 3,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The silver mirror needs 6 gems for each of 7 locks. How many gems are needed?",
+      "answers": [
+        "42",
+        "13",
+        "48",
+        "7"
+      ],
+      "correct": 0,
+      "hint": "Multiply gems per lock by the number of locks.",
+      "explain": "6 × 7 = 42."
+    },
+    {
+      "id": "serpent-c3-a-new03",
+      "chapter": 3,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Choose the sentence with correct subject–verb agreement about the mirror gallery.",
+      "answers": [
+        "The reflections glows beneath the arch.",
+        "The reflections glow beneath the arch.",
+        "The reflections glowing beneath the arch.",
+        "The reflections has glowed beneath the arch."
+      ],
+      "correct": 1,
+      "hint": "A plural subject usually takes a verb without -s in the present tense.",
+      "explain": "“reflections” is plural, so “glow” agrees with it."
+    },
+    {
+      "id": "serpent-c3-a-new04",
+      "chapter": 3,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which sentence correctly uses a comma after an introductory phrase?",
+      "answers": [
+        "After sunset the silver mirror, began to hum.",
+        "After sunset, the silver mirror began to hum.",
+        "After, sunset the silver mirror began to hum.",
+        "After sunset the, silver mirror began to hum."
+      ],
+      "correct": 1,
+      "hint": "The introductory phrase ends before the main clause.",
+      "explain": "The comma follows “After sunset,” not the subject or verb."
+    },
+    {
+      "id": "serpent-c3-a-new05",
+      "chapter": 3,
+      "skill": "reading",
+      "difficulty": "apprentice",
+      "question": "According to the passage, what happens when Iona returns to the reflection?",
+      "answers": [
+        "It vanishes.",
+        "It glows more brightly.",
+        "The door collapses.",
+        "It turns into a key."
+      ],
+      "correct": 1,
+      "hint": "Look for what happens after she returns.",
+      "explain": "The passage explicitly says its glow brightened when she returned.",
+      "passage": "At dawn, Iona found the reflection beside the silver mirror. Its glow faded whenever she stepped away, but brightened when she returned."
+    },
+    {
+      "id": "serpent-c3-a-new06",
+      "chapter": 3,
+      "skill": "science",
+      "difficulty": "apprentice",
+      "question": "What is the independent variable in this investigation?",
+      "answers": [
+        "Lamp type",
+        "Fog density",
+        "Distance scale",
+        "Number of observers"
+      ],
+      "correct": 1,
+      "hint": "Identify what the experimenter deliberately changes.",
+      "explain": "Fog density is deliberately varied; the other factors are held constant.",
+      "passage": "A student measures how far a light from the reflection travels through fog. The student changes the fog density while keeping the lamp and distance scale the same."
+    },
+    {
+      "id": "serpent-c3-i-new01",
+      "chapter": 3,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "Each sigil costs 10 coins. The keeper buys 6, then receives a 5-coin discount. What is the final cost?",
+      "answers": [
+        "60",
+        "55",
+        "11",
+        "65"
+      ],
+      "correct": 1,
+      "hint": "Multiply before subtracting the discount.",
+      "explain": "10 × 6 − 5 = 55."
+    },
+    {
+      "id": "serpent-c3-i-new02",
+      "chapter": 3,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "To open the silver mirror, solve 5x + 3 = 38. What is x?",
+      "answers": [
+        "6",
+        "9",
+        "7",
+        "8"
+      ],
+      "correct": 2,
+      "hint": "Subtract 3, then divide by the coefficient.",
+      "explain": "38 − 3 = 35; divide by 5 to get x = 7."
+    },
+    {
+      "id": "serpent-c3-i-new03",
+      "chapter": 3,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which revision avoids a comma splice in the keeper’s report about the silver mirror?",
+      "answers": [
+        "The silver mirror shook, the guards fled.",
+        "The silver mirror shook; the guards fled.",
+        "The silver mirror shook, the guards, fled.",
+        "The silver mirror shook the guards, fled."
+      ],
+      "correct": 1,
+      "hint": "Two independent clauses need more than a comma between them.",
+      "explain": "A semicolon correctly joins two closely related independent clauses."
+    },
+    {
+      "id": "serpent-c3-i-new04",
+      "chapter": 3,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which sentence is the most concise without losing meaning?",
+      "answers": [
+        "Due to the fact that the reflection was broken, the door would not open.",
+        "The door would not open because the reflection was broken.",
+        "It was because of the broken reflection that the door did not have the ability to open.",
+        "The door, on account of the reflection having been broken, did not open."
+      ],
+      "correct": 1,
+      "hint": "Prefer direct wording over unnecessary phrases.",
+      "explain": "“Because” is clearer and shorter than “due to the fact that.”"
+    },
+    {
+      "id": "serpent-c3-i-new05",
+      "chapter": 3,
+      "skill": "reading",
+      "difficulty": "investigator",
+      "question": "What is the strongest inference about the caretaker?",
+      "answers": [
+        "He is completely unconcerned.",
+        "He has never seen the object.",
+        "He may know more about its danger than he admits.",
+        "He wants visitors to touch it."
+      ],
+      "correct": 2,
+      "hint": "Compare his words with his actions.",
+      "explain": "His refusal to approach contradicts his claim that it is harmless.",
+      "passage": "The caretaker insisted the silver mirror was harmless, yet he refused to stand near it. He watched the sigil on its surface until the visitors had gone."
+    },
+    {
+      "id": "serpent-c3-i-new06",
+      "chapter": 3,
+      "skill": "science",
+      "difficulty": "investigator",
+      "question": "If the measured trend continues for one more minute, what light output is predicted?",
+      "answers": [
+        "0 units",
+        "3 units",
+        "6 units",
+        "12 units"
+      ],
+      "correct": 0,
+      "hint": "Find the constant change between consecutive measurements.",
+      "explain": "Output decreases by 3 units each minute; after 3 units comes 0.",
+      "passage": "In the mirror gallery, a crystal produces 12, 9, 6, and 3 units of light after 0, 1, 2, and 3 minutes, respectively, under constant conditions."
+    },
+    {
+      "id": "serpent-c3-c-new01",
+      "chapter": 3,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "The mirror gallery has a rectangular floor measuring (6+x) by 8 units. Its area is 80 square units. Find x.",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "10"
+      ],
+      "correct": 1,
+      "hint": "Area equals length times width; divide first.",
+      "explain": "80 ÷ 8 = 10; subtract 6 to get x = 4."
+    },
+    {
+      "id": "serpent-c3-c-new02",
+      "chapter": 3,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "A sequence on the silver mirror begins 5, 11, 17, ... and increases by a constant amount. What is its sixth term?",
+      "answers": [
+        "29",
+        "35",
+        "41",
+        "36"
+      ],
+      "correct": 1,
+      "hint": "The sixth term is five increases after the first.",
+      "explain": "5 + 5(6) = 35."
+    },
+    {
+      "id": "serpent-c3-c-new03",
+      "chapter": 3,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Which sentence keeps the modifier closest to what it describes?",
+      "answers": [
+        "Covered in dust, Mara examined the silver mirror.",
+        "Mara examined the silver mirror covered in dust.",
+        "Examining the silver mirror, the dust covered Mara.",
+        "The silver mirror examined Mara, covered in dust."
+      ],
+      "correct": 1,
+      "hint": "Ask what is actually covered in dust.",
+      "explain": "Placing “covered in dust” immediately after “silver mirror” makes the intended meaning clear."
+    },
+    {
+      "id": "serpent-c3-c-new04",
+      "chapter": 3,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Choose the revision with correct parallel structure.",
+      "answers": [
+        "The keeper promised to inspect the reflection, repairing the lock, and that she would record the result.",
+        "The keeper promised inspecting the reflection, to repair the lock, and recording the result.",
+        "The keeper promised to inspect the reflection, to repair the lock, and to record the result.",
+        "The keeper promised to inspect the reflection, repair of the lock, and to record the result."
+      ],
+      "correct": 2,
+      "hint": "Items in a series should use matching grammatical forms.",
+      "explain": "All three actions use the infinitive form: to inspect, to repair, and to record."
+    },
+    {
+      "id": "serpent-c3-c-new05",
+      "chapter": 3,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "What is the primary effect of the detail about silver dust?",
+      "answers": [
+        "It confirms the archivist has never entered.",
+        "It introduces evidence that challenges the archivist’s statement.",
+        "It proves the seal is made of gold.",
+        "It establishes that a century has passed since the conversation."
+      ],
+      "correct": 1,
+      "hint": "Ask whether the physical evidence supports or undermines the statement.",
+      "explain": "Fresh dust from behind the seal suggests someone may have accessed it recently, creating tension with the claim.",
+      "passage": "“No one has opened the silver mirror in a century,” the archivist said. But her hands were stained with fresh silver dust, the kind found only behind its seal."
+    },
+    {
+      "id": "serpent-c3-c-new06",
+      "chapter": 3,
+      "skill": "science",
+      "difficulty": "challenge",
+      "question": "Which conclusion is best supported by the experiment?",
+      "answers": [
+        "Moving air may increase heat loss from the sample.",
+        "Moving air always makes objects hotter.",
+        "The samples began at different temperatures.",
+        "The heat source supplied more energy to sample B."
+      ],
+      "correct": 0,
+      "hint": "Compare the only stated difference between the setups.",
+      "explain": "Sample B warmed less when exposed to moving air, consistent with greater heat loss.",
+      "passage": "Two identical reflection samples are heated for five minutes. Sample A is kept in an insulated box and rises 8°C. Sample B is exposed to moving air and rises 3°C. The heat source is the same."
+    },
+    {
+      "id": "serpent-c4-a-new01",
+      "chapter": 4,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The clockwork observatory has 8 rows of 7 star tiles. How many tiles are there?",
+      "answers": [
+        "15",
+        "56",
+        "63",
+        "48"
+      ],
+      "correct": 1,
+      "hint": "Multiply rows by tiles per row.",
+      "explain": "8 × 7 = 56."
+    },
+    {
+      "id": "serpent-c4-a-new02",
+      "chapter": 4,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The astral clock needs 7 gems for each of 8 locks. How many gems are needed?",
+      "answers": [
+        "56",
+        "15",
+        "63",
+        "8"
+      ],
+      "correct": 0,
+      "hint": "Multiply gems per lock by the number of locks.",
+      "explain": "7 × 8 = 56."
+    },
+    {
+      "id": "serpent-c4-a-new03",
+      "chapter": 4,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Choose the sentence with correct subject–verb agreement about the clockwork observatory.",
+      "answers": [
+        "The gears glows beneath the arch.",
+        "The gears glow beneath the arch.",
+        "The gears glowing beneath the arch.",
+        "The gears has glowed beneath the arch."
+      ],
+      "correct": 1,
+      "hint": "A plural subject usually takes a verb without -s in the present tense.",
+      "explain": "“gears” is plural, so “glow” agrees with it."
+    },
+    {
+      "id": "serpent-c4-a-new04",
+      "chapter": 4,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which sentence correctly uses a comma after an introductory phrase?",
+      "answers": [
+        "After sunset the astral clock, began to hum.",
+        "After sunset, the astral clock began to hum.",
+        "After, sunset the astral clock began to hum.",
+        "After sunset the, astral clock began to hum."
+      ],
+      "correct": 1,
+      "hint": "The introductory phrase ends before the main clause.",
+      "explain": "The comma follows “After sunset,” not the subject or verb."
+    },
+    {
+      "id": "serpent-c4-a-new05",
+      "chapter": 4,
+      "skill": "reading",
+      "difficulty": "apprentice",
+      "question": "According to the passage, what happens when Iona returns to the gear?",
+      "answers": [
+        "It vanishes.",
+        "It glows more brightly.",
+        "The door collapses.",
+        "It turns into a key."
+      ],
+      "correct": 1,
+      "hint": "Look for what happens after she returns.",
+      "explain": "The passage explicitly says its glow brightened when she returned.",
+      "passage": "At dawn, Iona found the gear beside the astral clock. Its glow faded whenever she stepped away, but brightened when she returned."
+    },
+    {
+      "id": "serpent-c4-a-new06",
+      "chapter": 4,
+      "skill": "science",
+      "difficulty": "apprentice",
+      "question": "What is the independent variable in this investigation?",
+      "answers": [
+        "Lamp type",
+        "Fog density",
+        "Distance scale",
+        "Number of observers"
+      ],
+      "correct": 1,
+      "hint": "Identify what the experimenter deliberately changes.",
+      "explain": "Fog density is deliberately varied; the other factors are held constant.",
+      "passage": "A student measures how far a light from the gear travels through fog. The student changes the fog density while keeping the lamp and distance scale the same."
+    },
+    {
+      "id": "serpent-c4-i-new01",
+      "chapter": 4,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "Each star costs 11 coins. The keeper buys 7, then receives a 6-coin discount. What is the final cost?",
+      "answers": [
+        "77",
+        "71",
+        "12",
+        "83"
+      ],
+      "correct": 1,
+      "hint": "Multiply before subtracting the discount.",
+      "explain": "11 × 7 − 6 = 71."
+    },
+    {
+      "id": "serpent-c4-i-new02",
+      "chapter": 4,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "To open the astral clock, solve 6x + 3 = 51. What is x?",
+      "answers": [
+        "7",
+        "10",
+        "8",
+        "9"
+      ],
+      "correct": 2,
+      "hint": "Subtract 3, then divide by the coefficient.",
+      "explain": "51 − 3 = 48; divide by 6 to get x = 8."
+    },
+    {
+      "id": "serpent-c4-i-new03",
+      "chapter": 4,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which revision avoids a comma splice in the keeper’s report about the astral clock?",
+      "answers": [
+        "The astral clock shook, the guards fled.",
+        "The astral clock shook; the guards fled.",
+        "The astral clock shook, the guards, fled.",
+        "The astral clock shook the guards, fled."
+      ],
+      "correct": 1,
+      "hint": "Two independent clauses need more than a comma between them.",
+      "explain": "A semicolon correctly joins two closely related independent clauses."
+    },
+    {
+      "id": "serpent-c4-i-new04",
+      "chapter": 4,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which sentence is the most concise without losing meaning?",
+      "answers": [
+        "Due to the fact that the gear was broken, the door would not open.",
+        "The door would not open because the gear was broken.",
+        "It was because of the broken gear that the door did not have the ability to open.",
+        "The door, on account of the gear having been broken, did not open."
+      ],
+      "correct": 1,
+      "hint": "Prefer direct wording over unnecessary phrases.",
+      "explain": "“Because” is clearer and shorter than “due to the fact that.”"
+    },
+    {
+      "id": "serpent-c4-i-new05",
+      "chapter": 4,
+      "skill": "reading",
+      "difficulty": "investigator",
+      "question": "What is the strongest inference about the caretaker?",
+      "answers": [
+        "He is completely unconcerned.",
+        "He has never seen the object.",
+        "He may know more about its danger than he admits.",
+        "He wants visitors to touch it."
+      ],
+      "correct": 2,
+      "hint": "Compare his words with his actions.",
+      "explain": "His refusal to approach contradicts his claim that it is harmless.",
+      "passage": "The caretaker insisted the astral clock was harmless, yet he refused to stand near it. He watched the star on its surface until the visitors had gone."
+    },
+    {
+      "id": "serpent-c4-i-new06",
+      "chapter": 4,
+      "skill": "science",
+      "difficulty": "investigator",
+      "question": "If the measured trend continues for one more minute, what light output is predicted?",
+      "answers": [
+        "0 units",
+        "3 units",
+        "6 units",
+        "12 units"
+      ],
+      "correct": 0,
+      "hint": "Find the constant change between consecutive measurements.",
+      "explain": "Output decreases by 3 units each minute; after 3 units comes 0.",
+      "passage": "In the clockwork observatory, a crystal produces 12, 9, 6, and 3 units of light after 0, 1, 2, and 3 minutes, respectively, under constant conditions."
+    },
+    {
+      "id": "serpent-c4-c-new01",
+      "chapter": 4,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "The clockwork observatory has a rectangular floor measuring (7+x) by 9 units. Its area is 99 square units. Find x.",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "11"
+      ],
+      "correct": 1,
+      "hint": "Area equals length times width; divide first.",
+      "explain": "99 ÷ 9 = 11; subtract 7 to get x = 4."
+    },
+    {
+      "id": "serpent-c4-c-new02",
+      "chapter": 4,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "A sequence on the astral clock begins 6, 13, 20, ... and increases by a constant amount. What is its sixth term?",
+      "answers": [
+        "34",
+        "41",
+        "48",
+        "42"
+      ],
+      "correct": 1,
+      "hint": "The sixth term is five increases after the first.",
+      "explain": "6 + 5(7) = 41."
+    },
+    {
+      "id": "serpent-c4-c-new03",
+      "chapter": 4,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Which sentence keeps the modifier closest to what it describes?",
+      "answers": [
+        "Covered in dust, Mara examined the astral clock.",
+        "Mara examined the astral clock covered in dust.",
+        "Examining the astral clock, the dust covered Mara.",
+        "The astral clock examined Mara, covered in dust."
+      ],
+      "correct": 1,
+      "hint": "Ask what is actually covered in dust.",
+      "explain": "Placing “covered in dust” immediately after “astral clock” makes the intended meaning clear."
+    },
+    {
+      "id": "serpent-c4-c-new04",
+      "chapter": 4,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Choose the revision with correct parallel structure.",
+      "answers": [
+        "The keeper promised to inspect the gear, repairing the lock, and that she would record the result.",
+        "The keeper promised inspecting the gear, to repair the lock, and recording the result.",
+        "The keeper promised to inspect the gear, to repair the lock, and to record the result.",
+        "The keeper promised to inspect the gear, repair of the lock, and to record the result."
+      ],
+      "correct": 2,
+      "hint": "Items in a series should use matching grammatical forms.",
+      "explain": "All three actions use the infinitive form: to inspect, to repair, and to record."
+    },
+    {
+      "id": "serpent-c4-c-new05",
+      "chapter": 4,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "What is the primary effect of the detail about silver dust?",
+      "answers": [
+        "It confirms the archivist has never entered.",
+        "It introduces evidence that challenges the archivist’s statement.",
+        "It proves the seal is made of gold.",
+        "It establishes that a century has passed since the conversation."
+      ],
+      "correct": 1,
+      "hint": "Ask whether the physical evidence supports or undermines the statement.",
+      "explain": "Fresh dust from behind the seal suggests someone may have accessed it recently, creating tension with the claim.",
+      "passage": "“No one has opened the astral clock in a century,” the archivist said. But her hands were stained with fresh silver dust, the kind found only behind its seal."
+    },
+    {
+      "id": "serpent-c4-c-new06",
+      "chapter": 4,
+      "skill": "science",
+      "difficulty": "challenge",
+      "question": "Which conclusion is best supported by the experiment?",
+      "answers": [
+        "Moving air may increase heat loss from the sample.",
+        "Moving air always makes objects hotter.",
+        "The samples began at different temperatures.",
+        "The heat source supplied more energy to sample B."
+      ],
+      "correct": 0,
+      "hint": "Compare the only stated difference between the setups.",
+      "explain": "Sample B warmed less when exposed to moving air, consistent with greater heat loss.",
+      "passage": "Two identical gear samples are heated for five minutes. Sample A is kept in an insulated box and rises 8°C. Sample B is exposed to moving air and rises 3°C. The heat source is the same."
+    },
+    {
+      "id": "serpent-c5-a-new01",
+      "chapter": 5,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The serpent's chamber has 9 rows of 8 key tiles. How many tiles are there?",
+      "answers": [
+        "17",
+        "72",
+        "80",
+        "63"
+      ],
+      "correct": 1,
+      "hint": "Multiply rows by tiles per row.",
+      "explain": "9 × 8 = 72."
+    },
+    {
+      "id": "serpent-c5-a-new02",
+      "chapter": 5,
+      "skill": "math",
+      "difficulty": "apprentice",
+      "question": "The ancient seal needs 8 gems for each of 9 locks. How many gems are needed?",
+      "answers": [
+        "72",
+        "17",
+        "80",
+        "9"
+      ],
+      "correct": 0,
+      "hint": "Multiply gems per lock by the number of locks.",
+      "explain": "8 × 9 = 72."
+    },
+    {
+      "id": "serpent-c5-a-new03",
+      "chapter": 5,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Choose the sentence with correct subject–verb agreement about the serpent's chamber.",
+      "answers": [
+        "The serpents glows beneath the arch.",
+        "The serpents glow beneath the arch.",
+        "The serpents glowing beneath the arch.",
+        "The serpents has glowed beneath the arch."
+      ],
+      "correct": 1,
+      "hint": "A plural subject usually takes a verb without -s in the present tense.",
+      "explain": "“serpents” is plural, so “glow” agrees with it."
+    },
+    {
+      "id": "serpent-c5-a-new04",
+      "chapter": 5,
+      "skill": "english",
+      "difficulty": "apprentice",
+      "question": "Which sentence correctly uses a comma after an introductory phrase?",
+      "answers": [
+        "After sunset the ancient seal, began to hum.",
+        "After sunset, the ancient seal began to hum.",
+        "After, sunset the ancient seal began to hum.",
+        "After sunset the, ancient seal began to hum."
+      ],
+      "correct": 1,
+      "hint": "The introductory phrase ends before the main clause.",
+      "explain": "The comma follows “After sunset,” not the subject or verb."
+    },
+    {
+      "id": "serpent-c5-a-new05",
+      "chapter": 5,
+      "skill": "reading",
+      "difficulty": "apprentice",
+      "question": "According to the passage, what happens when Iona returns to the serpent?",
+      "answers": [
+        "It vanishes.",
+        "It glows more brightly.",
+        "The door collapses.",
+        "It turns into a key."
+      ],
+      "correct": 1,
+      "hint": "Look for what happens after she returns.",
+      "explain": "The passage explicitly says its glow brightened when she returned.",
+      "passage": "At dawn, Iona found the serpent beside the ancient seal. Its glow faded whenever she stepped away, but brightened when she returned."
+    },
+    {
+      "id": "serpent-c5-a-new06",
+      "chapter": 5,
+      "skill": "science",
+      "difficulty": "apprentice",
+      "question": "What is the independent variable in this investigation?",
+      "answers": [
+        "Lamp type",
+        "Fog density",
+        "Distance scale",
+        "Number of observers"
+      ],
+      "correct": 1,
+      "hint": "Identify what the experimenter deliberately changes.",
+      "explain": "Fog density is deliberately varied; the other factors are held constant.",
+      "passage": "A student measures how far a light from the serpent travels through fog. The student changes the fog density while keeping the lamp and distance scale the same."
+    },
+    {
+      "id": "serpent-c5-i-new01",
+      "chapter": 5,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "Each key costs 12 coins. The keeper buys 8, then receives a 7-coin discount. What is the final cost?",
+      "answers": [
+        "96",
+        "89",
+        "13",
+        "103"
+      ],
+      "correct": 1,
+      "hint": "Multiply before subtracting the discount.",
+      "explain": "12 × 8 − 7 = 89."
+    },
+    {
+      "id": "serpent-c5-i-new02",
+      "chapter": 5,
+      "skill": "math",
+      "difficulty": "investigator",
+      "question": "To open the ancient seal, solve 7x + 3 = 66. What is x?",
+      "answers": [
+        "8",
+        "11",
+        "9",
+        "10"
+      ],
+      "correct": 2,
+      "hint": "Subtract 3, then divide by the coefficient.",
+      "explain": "66 − 3 = 63; divide by 7 to get x = 9."
+    },
+    {
+      "id": "serpent-c5-i-new03",
+      "chapter": 5,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which revision avoids a comma splice in the keeper’s report about the ancient seal?",
+      "answers": [
+        "The ancient seal shook, the guards fled.",
+        "The ancient seal shook; the guards fled.",
+        "The ancient seal shook, the guards, fled.",
+        "The ancient seal shook the guards, fled."
+      ],
+      "correct": 1,
+      "hint": "Two independent clauses need more than a comma between them.",
+      "explain": "A semicolon correctly joins two closely related independent clauses."
+    },
+    {
+      "id": "serpent-c5-i-new04",
+      "chapter": 5,
+      "skill": "english",
+      "difficulty": "investigator",
+      "question": "Which sentence is the most concise without losing meaning?",
+      "answers": [
+        "Due to the fact that the serpent was broken, the door would not open.",
+        "The door would not open because the serpent was broken.",
+        "It was because of the broken serpent that the door did not have the ability to open.",
+        "The door, on account of the serpent having been broken, did not open."
+      ],
+      "correct": 1,
+      "hint": "Prefer direct wording over unnecessary phrases.",
+      "explain": "“Because” is clearer and shorter than “due to the fact that.”"
+    },
+    {
+      "id": "serpent-c5-i-new05",
+      "chapter": 5,
+      "skill": "reading",
+      "difficulty": "investigator",
+      "question": "What is the strongest inference about the caretaker?",
+      "answers": [
+        "He is completely unconcerned.",
+        "He has never seen the object.",
+        "He may know more about its danger than he admits.",
+        "He wants visitors to touch it."
+      ],
+      "correct": 2,
+      "hint": "Compare his words with his actions.",
+      "explain": "His refusal to approach contradicts his claim that it is harmless.",
+      "passage": "The caretaker insisted the ancient seal was harmless, yet he refused to stand near it. He watched the key on its surface until the visitors had gone."
+    },
+    {
+      "id": "serpent-c5-i-new06",
+      "chapter": 5,
+      "skill": "science",
+      "difficulty": "investigator",
+      "question": "If the measured trend continues for one more minute, what light output is predicted?",
+      "answers": [
+        "0 units",
+        "3 units",
+        "6 units",
+        "12 units"
+      ],
+      "correct": 0,
+      "hint": "Find the constant change between consecutive measurements.",
+      "explain": "Output decreases by 3 units each minute; after 3 units comes 0.",
+      "passage": "In the serpent's chamber, a crystal produces 12, 9, 6, and 3 units of light after 0, 1, 2, and 3 minutes, respectively, under constant conditions."
+    },
+    {
+      "id": "serpent-c5-c-new01",
+      "chapter": 5,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "The serpent's chamber has a rectangular floor measuring (8+x) by 10 units. Its area is 120 square units. Find x.",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "12"
+      ],
+      "correct": 1,
+      "hint": "Area equals length times width; divide first.",
+      "explain": "120 ÷ 10 = 12; subtract 8 to get x = 4."
+    },
+    {
+      "id": "serpent-c5-c-new02",
+      "chapter": 5,
+      "skill": "math",
+      "difficulty": "challenge",
+      "question": "A sequence on the ancient seal begins 7, 15, 23, ... and increases by a constant amount. What is its sixth term?",
+      "answers": [
+        "39",
+        "47",
+        "55",
+        "48"
+      ],
+      "correct": 1,
+      "hint": "The sixth term is five increases after the first.",
+      "explain": "7 + 5(8) = 47."
+    },
+    {
+      "id": "serpent-c5-c-new03",
+      "chapter": 5,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Which sentence keeps the modifier closest to what it describes?",
+      "answers": [
+        "Covered in dust, Mara examined the ancient seal.",
+        "Mara examined the ancient seal covered in dust.",
+        "Examining the ancient seal, the dust covered Mara.",
+        "The ancient seal examined Mara, covered in dust."
+      ],
+      "correct": 1,
+      "hint": "Ask what is actually covered in dust.",
+      "explain": "Placing “covered in dust” immediately after “ancient seal” makes the intended meaning clear."
+    },
+    {
+      "id": "serpent-c5-c-new04",
+      "chapter": 5,
+      "skill": "english",
+      "difficulty": "challenge",
+      "question": "Choose the revision with correct parallel structure.",
+      "answers": [
+        "The keeper promised to inspect the serpent, repairing the lock, and that she would record the result.",
+        "The keeper promised inspecting the serpent, to repair the lock, and recording the result.",
+        "The keeper promised to inspect the serpent, to repair the lock, and to record the result.",
+        "The keeper promised to inspect the serpent, repair of the lock, and to record the result."
+      ],
+      "correct": 2,
+      "hint": "Items in a series should use matching grammatical forms.",
+      "explain": "All three actions use the infinitive form: to inspect, to repair, and to record."
+    },
+    {
+      "id": "serpent-c5-c-new05",
+      "chapter": 5,
+      "skill": "reading",
+      "difficulty": "challenge",
+      "question": "What is the primary effect of the detail about silver dust?",
+      "answers": [
+        "It confirms the archivist has never entered.",
+        "It introduces evidence that challenges the archivist’s statement.",
+        "It proves the seal is made of gold.",
+        "It establishes that a century has passed since the conversation."
+      ],
+      "correct": 1,
+      "hint": "Ask whether the physical evidence supports or undermines the statement.",
+      "explain": "Fresh dust from behind the seal suggests someone may have accessed it recently, creating tension with the claim.",
+      "passage": "“No one has opened the ancient seal in a century,” the archivist said. But her hands were stained with fresh silver dust, the kind found only behind its seal."
+    },
+    {
+      "id": "serpent-c5-c-new06",
+      "chapter": 5,
+      "skill": "science",
+      "difficulty": "challenge",
+      "question": "Which conclusion is best supported by the experiment?",
+      "answers": [
+        "Moving air may increase heat loss from the sample.",
+        "Moving air always makes objects hotter.",
+        "The samples began at different temperatures.",
+        "The heat source supplied more energy to sample B."
+      ],
+      "correct": 0,
+      "hint": "Compare the only stated difference between the setups.",
+      "explain": "Sample B warmed less when exposed to moving air, consistent with greater heat loss.",
+      "passage": "Two identical serpent samples are heated for five minutes. Sample A is kept in an insulated box and rises 8°C. Sample B is exposed to moving air and rises 3°C. The heat source is the same."
     }
   ]
 }
