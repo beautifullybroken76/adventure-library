@@ -15,8 +15,32 @@ const player=()=>subject(jwt())||'guest';let currentPlayer=player();const saveKe
 function load(){try{const s=JSON.parse(localStorage.getItem(saveKey()));if(s&&Array.isArray(s.completed))return {completed:s.completed,score:Number(s.score)||0,level:levels[s.level]?s.level:'investigator',runs:s.runs||{}}}catch{}return {completed:[],score:0,level:'investigator',runs:{}}}
 let state=load(),mode='home',activeChapter=0,activeQuestions=[],position=0,selected=null,hint=false,started=0;
 function save(){try{localStorage.setItem(saveKey(),JSON.stringify(state))}catch(e){console.warn('Save unavailable',e)}}
-function run(ch){const key=state.level+':'+ch;return state.runs[key]||{completed:[],score:0}}
-function chapterQuestions(ch){return questions.filter(q=>q.chapter===ch&&q.difficulty===state.level)}
+const ROUND_SIZE=5;
+function runKey(ch){return state.level+':'+ch}
+function run(ch){return state.runs[runKey(ch)]||{completed:[],score:0}}
+function pool(ch){return questions.filter(q=>q.chapter===ch&&q.difficulty===state.level)}
+function shuffle(items){const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function selectRound(ch,previous=[]){
+ const all=pool(ch),seen=new Set(previous),fresh=shuffle(all.filter(q=>!seen.has(q.id)));
+ const selected=fresh.slice(0,ROUND_SIZE);
+ if(selected.length<Math.min(ROUND_SIZE,all.length))selected.push(...shuffle(all.filter(q=>!selected.includes(q))).slice(0,Math.min(ROUND_SIZE,all.length)-selected.length));
+ return selected.map(q=>q.id);
+}
+function ensureRun(ch){
+ const key=runKey(ch),r=state.runs[key]||{completed:[],score:0};
+ if(!Array.isArray(r.questionIds)||!r.questionIds.length){
+   // Preserve legacy progress when possible, but make the current round stable.
+   const old=Array.isArray(r.completed)?r.completed.filter(id=>pool(ch).some(q=>q.id===id)):[];
+   r.questionIds=[...old.slice(0,ROUND_SIZE),...selectRound(ch,old).slice(0,Math.max(0,ROUND_SIZE-old.length))];
+   r.completed=old.filter(id=>r.questionIds.includes(id));
+   r.score=Math.min(Number(r.score)||0,r.completed.length);
+   state.runs[key]=r;save();
+ }
+ return r;
+}
+function chapterQuestions(ch){const r=ensureRun(ch),byId=new Map(pool(ch).map(q=>[q.id,q]));return r.questionIds.map(id=>byId.get(id)).filter(Boolean)}
+function replayRound(ch){const key=runKey(ch),old=run(ch);state.runs[key]={completed:[],score:0,questionIds:selectRound(ch,old.questionIds||[])};save()}
+
 function queueKey(){return `serpent-learning-queue-v1:${currentPlayer}`}
 function getQueue(){try{const q=JSON.parse(localStorage.getItem(queueKey())||'[]');return Array.isArray(q)?q:[]}catch{return []}}
 function setQueue(q){try{localStorage.setItem(queueKey(),JSON.stringify(q));return true}catch{return false}}
@@ -32,19 +56,38 @@ function record(q,correct,usedHint){const t=jwt(),owner=subject(t);if(!owner||ow
  queue.push({attemptId:crypto.randomUUID(),adventureId:'serpent',questionId:q.id,skillId:skill,difficulty:levels[q.difficulty],isCorrect:correct,usedHint,durationSeconds:Math.min(3600,Math.max(0,Math.round((Date.now()-started)/1000)))});
  if(setQueue(queue))void flush()}
 function updateSync(){$('sync').textContent=jwt()?'Signed in · New answers sync to your learning dashboard. Story progress stays in this browser.':'Guest mode · story progress stays in this browser. Sign in at the Adventure Library to record ACT practice.'}
-function header(){updateSync();const all=Object.values(state.runs).reduce((n,r)=>n+(r.completed?.length||0),0);$('status').textContent=all+' puzzles solved across all paths'}
+function header(){
+ updateSync();
+ const completedChapters=config.chapters.filter(ch=>{
+  const qs=chapterQuestions(ch.id),r=run(ch.id);
+  return qs.length>0&&qs.every(q=>r.completed.includes(q.id))
+ }).length;
+ const all=Object.values(state.runs).reduce((n,r)=>n+(r.completed?.length||0),0);
+ $('status').textContent=all+' clues solved across current paths';
+ const current=mode==='question'||mode==='complete'?activeChapter:
+   (config.chapters.find(ch=>{const qs=chapterQuestions(ch.id),r=run(ch.id);return qs.length&&qs.some(q=>!r.completed.includes(q.id))})?.id||config.chapters.at(-1)?.id||1);
+ const chapter=config.chapters.find(ch=>ch.id===current);
+ const levelLabel=state.level==='challenge'?'Master of Secrets':state.level==='investigator'?'Investigator':'Apprentice';
+ const chips=[
+  'Chapter '+current+' · '+(chapter?.name||''),
+  'Chambers '+completedChapters+' / '+config.chapters.length,
+  'Clues practiced '+all,
+  'Difficulty · '+levelLabel
+ ];
+ $('overview').replaceChildren(...chips.map(label=>{const span=document.createElement('span');span.className='chip';span.textContent=label;return span}));
+}
 function home(){mode='home';header();const chapterCards=config.chapters.map((ch,i)=>{
  const qs=chapterQuestions(ch.id),r=run(ch.id),complete=qs.length>0&&qs.every(q=>r.completed.includes(q.id));
  const unlocked=i===0||config.chapters.slice(0,i).every(c=>{const a=chapterQuestions(c.id),b=run(c.id);return a.length>0&&a.every(q=>b.completed.includes(q.id))});
  const status=complete?'✦ Chamber unsealed':unlocked?'Ready to explore':'🔒 Complete the previous chamber';
- const button=complete?'Replay this chamber':unlocked?'Enter chamber':'Locked';
+ const button=complete?'Replay with fresh clues':unlocked?'Enter chamber':'Locked';
  return '<article class="chapter-card'+(unlocked?'':' locked')+'"><div class="eyebrow">CHAPTER '+ch.id+'</div><h3>'+esc(ch.name)+'</h3><p>'+esc(ch.intro)+'</p><p class="chapter-status">'+status+' · '+r.completed.length+' / '+qs.length+' clues</p><button class="action" data-chapter="'+ch.id+'" '+(unlocked?'':'disabled')+'>'+button+'</button></article>'}).join('');
  const allQuestions=config.chapters.flatMap(c=>chapterQuestions(c.id)),done=allQuestions.filter(q=>run(q.chapter).completed.includes(q.id)).length;
- $('game').innerHTML='<div class="eyebrow">INVESTIGATOR\'S DOSSIER</div><h2>Choose your path</h2><p class="muted">The silver serpent coils around a map of five sealed chambers. Which mystery will you unlock?</p><div class="difficulty"><label for="difficulty">Choose your difficulty</label><select id="difficulty">'+Object.keys(levels).map(l=>'<option value="'+l+'"'+(state.level===l?' selected':'')+'>'+esc(levelNames[l])+'</option>').join('')+'</select><p class="notice">Each level has its own chapter progress. Changing levels never erases completed paths.</p></div><p class="muted">'+done+' / '+allQuestions.length+' clues solved on this difficulty</p><div class="progress"><div style="width:'+(allQuestions.length?done/allQuestions.length*100:0)+'%"></div></div><div class="chapter-grid">'+chapterCards+'</div>';
+ $('game').innerHTML='<div class="eyebrow">INVESTIGATOR\'S DOSSIER</div><h2>Choose your path</h2><p class="muted">The silver serpent coils around a map of five sealed chambers. Which mystery will you unlock?</p><div class="difficulty"><label for="difficulty">Choose your difficulty</label><select id="difficulty">'+Object.keys(levels).map(l=>'<option value="'+l+'"'+(state.level===l?' selected':'')+'>'+esc(levelNames[l])+'</option>').join('')+'</select><p class="notice">Each level has its own progress. Each chamber draws five clues; replays favor questions you have not just seen.</p></div><p class="muted">'+done+' / '+allQuestions.length+' clues solved on this difficulty</p><div class="progress"><div style="width:'+(allQuestions.length?done/allQuestions.length*100:0)+'%"></div></div><div class="chapter-grid">'+chapterCards+'</div>';
  $('difficulty').onchange=e=>{state.level=e.target.value;save();home()};
  document.querySelectorAll('[data-chapter]').forEach(b=>b.onclick=()=>enterChapter(Number(b.dataset.chapter)));
 }
-function enterChapter(ch){const qs=chapterQuestions(ch);if(!qs.length)return;const r=run(ch);if(qs.every(q=>r.completed.includes(q.id))){if(!confirm('Replay this chamber? Your earlier learning records will remain on the dashboard.'))return;state.runs[state.level+':'+ch]={completed:[],score:0};save()}
+function enterChapter(ch){let qs=chapterQuestions(ch);if(!qs.length)return;const r=run(ch);if(qs.every(q=>r.completed.includes(q.id))){if(!confirm('Replay this chamber with a fresh mix of clues? Your earlier learning records will remain on the dashboard.'))return;replayRound(ch);qs=chapterQuestions(ch)}
  activeChapter=ch;activeQuestions=qs;position=0;while(position<qs.length&&run(ch).completed.includes(qs[position].id))position++;question()}
 function question(){mode='question';header();if(position>=activeQuestions.length){chapterComplete();return}
  const q=activeQuestions[position],ch=config.chapters.find(x=>x.id===activeChapter),r=run(activeChapter),first=position===0;
