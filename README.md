@@ -1,20 +1,28 @@
-# The Adventure Library
+# Adventure Library — v2 (data-driven catalog)
 
-A static adventure selection page for Pam's Programming. The Loki Paradox remains at https://loki.pamsprogramming.com/ and is not changed by this project.
+The library is live at https://adventures.pamsprogramming.com/ on GitHub Pages.
 
-## Publish on GitHub Pages
+## Deploy
 
-1. Create a new GitHub repository (for example `adventure-library`).
-2. Upload **all files from this folder to the repository root**: `index.html`, `styles.css`, `script.js`, `CNAME`, and `README.md`. Commit to the `main` branch.
-3. Go to **Settings → Pages**. Under **Build and deployment**, select **Deploy from a branch**, branch `main`, folder `/ (root)`, and Save.
-4. At your DNS provider, add a CNAME record with **Host** `adventures` and **Target** `beautifullybroken76.github.io` (provided that this is the GitHub account owning the repo).
-5. In **Settings → Pages**, confirm the custom domain `adventures.pamsprogramming.com`. Once the certificate is issued, enable **Enforce HTTPS**.
+Upload/replace **index.html**, **styles.css**, **script.js**, **adventures.json**, **README.md** and keep the existing **CNAME** at the repository root. Commit to `main`; GitHub Pages deploys the update automatically.
 
-The included `CNAME` file records the custom domain. The site does not require an API or database for this first release.
+## Add an adventure
 
-## Notes
+Edit `adventures.json` and add an object to `adventures`. Each entry supports:
 
-- The Loki card links to the existing production game.
-- The other two cards are placeholders, not active games.
-- The names and designs of the future worlds are original working concepts and can be changed later.
-- The visual uses CSS only; no images or asset licensing is required. Google Fonts is used for typography, with local fallback fonts.
+- `id`: unique identifier, e.g. `my-new-game` (future save key)
+- `title`, `kicker`, `description`: card text
+- `status`: `available` or `coming-soon`
+- `url`: HTTPS game URL (required for playable cards)
+- `buttonText`: playable button label
+- `theme`: `loki`, `sorcery`, or `tech` (CSS visual presets)
+- `sigil`, `symbol`: card decoration
+- `comingText`: disabled card message
+
+Change a preview to `available` and set its HTTPS `url` when the game is published. Never edit the card markup in `index.html` for new entries.
+
+## Architecture and next milestone
+
+This is **only the data-driven adventure catalog**. Loki's authentication, progress, and game logic are unchanged. There is no platform-wide login yet. Next, extract shared auth and make cloud progress adventure-aware with a safe migration, then build the authoring UI.
+
+Test via GitHub Pages or a local HTTP server (e.g. `python -m http.server`); `file://` browsing may block JSON fetch.

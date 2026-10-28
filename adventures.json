@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "adventures": [
+    {
+      "id": "loki",
+      "title": "The Loki Paradox",
+      "kicker": "NINE REALMS · MYTH & MISCHIEF",
+      "description": "Reality is unraveling. Travel the Nine Realms, recover ancient runes, and match wits with the trickster himself.",
+      "status": "available",
+      "url": "https://loki.pamsprogramming.com/",
+      "buttonText": "Enter the Nine Realms",
+      "theme": "loki",
+      "sigil": "ᛉ",
+      "symbol": "ᚨ"
+    },
+    {
+      "id": "serpent",
+      "title": "The Serpent's Secret",
+      "kicker": "MAGIC · MYSTERY · SECRETS",
+      "description": "Behind the castle walls, a forbidden mystery awaits. Every clue brings you closer to the truth.",
+      "status": "coming-soon",
+      "theme": "sorcery",
+      "sigil": "♜",
+      "symbol": "✧",
+      "comingText": "The gates are still sealed"
+    },
+    {
+      "id": "inventor",
+      "title": "The Inventor Protocol",
+      "kicker": "TECHNOLOGY · INVENTION · HEROICS",
+      "description": "A powerful system has gone rogue. Use logic, science, and ingenuity to bring it back online.",
+      "status": "coming-soon",
+      "theme": "tech",
+      "sigil": "⬡",
+      "symbol": "⌁",
+      "comingText": "Systems initializing…"
+    }
+  ]
+}
