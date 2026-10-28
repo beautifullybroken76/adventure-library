@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Adventure sign-in handoff</title><meta name="referrer" content="no-referrer"></head><body style="font-family:system-ui;background:#141a2c;color:white;padding:2rem"><p id="status">Connecting to your Adventure Library account…</p><script>
+(() => {
+  'use strict';
+  const origin='https://loki.pamsprogramming.com';
+  const token=localStorage.getItem('adventure_library_token_v1') || '';
+  function valid(t){try{const p=t.split('.')[1];const d=JSON.parse(atob(p.replace(/-/g,'+').replace(/_/g,'/').padEnd(Math.ceil(p.length/4)*4,'=')));return d.exp*1000>Date.now()+30000;}catch{return false;}}
+  if(!window.opener){document.getElementById('status').textContent='Open this page from Loki to connect your account.';return;}
+  if(!valid(token)){document.getElementById('status').textContent='Please sign in at the Adventure Library first, then return to Loki and try again.';return;}
+  // No token in URLs, query strings, fragments, or referrers.
+  window.opener.postMessage({type:'adventure-library-auth-v1',token},origin);
+  document.getElementById('status').textContent='Account shared. You can close this window.';
+  setTimeout(()=>window.close(),350);
+})();
+</script></body></html>

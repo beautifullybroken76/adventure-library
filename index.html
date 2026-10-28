@@ -8,12 +8,13 @@
   <title>Adventure Library | Pam's Programming</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="auth.js" defer></script>
 </head>
 <body>
   <div class="stars" aria-hidden="true"></div>
   <header class="site-header wrap">
     <a class="brand" href="./" aria-label="Adventure Library home"><span class="brand-mark">✧</span><span>THE <strong>ADVENTURE</strong> LIBRARY<small>BY PAM'S PROGRAMMING</small></span></a>
-    <nav aria-label="Main navigation"><a href="#adventures">Explore worlds</a><a href="#about">Our story</a><a class="nav-home" href="https://pamsprogramming.com/">Pam's Programming ↗</a></nav>
+    <nav aria-label="Main navigation"><span id="auth-status" class="auth-status">Not signed in</span><button id="auth-open" type="button" class="auth-nav">Sign in</button><button id="auth-logout" type="button" class="auth-nav" hidden>Sign out</button><a href="#adventures">Explore worlds</a><a href="#about">Our story</a><a class="nav-home" href="https://pamsprogramming.com/">Pam's Programming ↗</a></nav>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -35,6 +36,7 @@
     </div></section>
     <section class="about-section wrap" id="about"><div class="about-icon" aria-hidden="true">✦</div><div><div class="eyebrow">A LITTLE MAGIC, A LOT OF LEARNING</div><h2>Adventure is the best kind of practice.</h2><p>These story-driven challenges turn reading, writing, math, science, and reasoning into quests worth completing. Pick a world you love, choose your challenge, and discover what you can do.</p></div></section>
   </main>
+  <dialog id="auth-dialog" class="auth-dialog"><form id="auth-form"><h2>Adventure account</h2><p>Use your existing Loki username and password.</p><label>Username<input id="auth-user" autocomplete="username" required maxlength="60"></label><label>Password<input id="auth-pass" type="password" autocomplete="current-password" required minlength="12"></label><p id="auth-message" role="status"></p><div class="auth-actions"><button type="submit">Sign in</button><button id="auth-create" type="button">Create account</button><button id="auth-close" type="button">Cancel</button></div><p><a href="recovery.html">Forgot password or need a recovery code?</a></p></form></dialog>
   <footer class="site-footer"><div class="wrap footer-inner"><span>✧ The Adventure Library <small>— a Pam's Programming creation</small></span><span>Made for curious minds and fearless adventurers.</span></div></footer>
 </body>
 </html>
