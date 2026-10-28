@@ -1,0 +1,36 @@
+{
+  "id": "serpent",
+  "title": "The Serpent's Secret",
+  "chapters": [
+    {
+      "id": 1,
+      "name": "The Sealed Corridor",
+      "intro": "The castle has a wing missing from every map. Tonight, a silver serpent appears on the wall and points toward a door that was never there.",
+      "outro": "The castle has kept a secret for centuries. You are about to find out why."
+    },
+    {
+      "id": 2,
+      "name": "The Library of Lies",
+      "intro": "Every book tells a different version of the same event. One of them is telling the truth, and the others are trying to keep you from it.",
+      "outro": "Some lies are written in ink. Others are written in what has been erased."
+    },
+    {
+      "id": 3,
+      "name": "The Glass Conservatory",
+      "intro": "Beneath moonlit glass, the castle grows plants that should not exist. The serpent leads you toward a sealed botanical ledger.",
+      "outro": "Nature is patient. Secrets, less so."
+    },
+    {
+      "id": 4,
+      "name": "The Clockwork Vault",
+      "intro": "The heart of the castle is a machine built to keep a promise. Its gears will not turn until you understand the pattern.",
+      "outro": "A lock is only a question made of metal."
+    },
+    {
+      "id": 5,
+      "name": "The Serpent’s Choice",
+      "intro": "The truth is finally within reach: the serpent was never guarding a treasure. It was guarding a decision.",
+      "outro": "Knowing the truth is one thing. Choosing what to do with it is another."
+    }
+  ]
+}
