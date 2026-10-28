@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learning Dashboard | Adventure Library</title>
+<style>
+:root{color-scheme:dark;font-family:Segoe UI,Arial,sans-serif;background:#111528;color:#f4efff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#32254e,transparent 42%),#111528;min-height:100vh}
+main{max-width:1000px;margin:auto;padding:28px 20px 80px}a{color:#f0c5ff}h1{font-size:clamp(2rem,5vw,3.2rem);margin:20px 0 4px}
+h2{font-size:1.2rem;margin-top:0}p{color:#c5bed9;line-height:1.5}.eyebrow{color:#e7b5ff;letter-spacing:.13em;text-transform:uppercase;font-size:.78rem}
+.panel{background:#1c2139;border:1px solid #414663;border-radius:18px;padding:22px;margin:20px 0}
+button,input,select{font:inherit;border-radius:9px;padding:10px 12px}button{background:#bc81e3;color:#181124;border:0;cursor:pointer;font-weight:700}
+button:disabled{opacity:.55;cursor:not-allowed}input,select{background:#111629;color:#fff;border:1px solid #676a83;max-width:100%}
+.formrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.formrow input{flex:1;min-width:180px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.card{border:1px solid #4b4e68;background:#171c30;padding:18px;border-radius:14px}
+.metric{font-size:2rem;font-weight:750}.bar{height:10px;background:#3d4055;border-radius:10px;overflow:hidden;margin:10px 0}
+.bar>div{height:100%;background:#bb8ce6}.muted{font-size:.88rem;color:#b5b0c8}
+.hidden{display:none}#notice{min-height:22px}ul{padding-left:20px}li{margin:8px 0}
+</style></head><body><main>
+<a href="./">← Back to Adventure Library</a>
+<div class="eyebrow" style="margin-top:24px">A little magic. A lot of learning.</div>
+<h1>Learning Dashboard</h1>
+<p>Track ACT practice across adventures. A player's results are private unless they explicitly grant another account access.</p>
+<div id="notice" role="status"></div>
+<section id="signin" class="panel hidden"><h2>Sign in</h2><p>Use your existing Adventure Library account.</p>
+<form id="signinForm" class="formrow"><input id="user" autocomplete="username" placeholder="Username" required>
+<input id="pass" type="password" autocomplete="current-password" placeholder="Password" required>
+<button>Sign in</button></form></section>
+<div id="signedin" class="hidden">
+<div class="formrow"><span id="who"></span><button id="signout" type="button">Sign out</button></div>
+<section class="panel"><h2>My learning</h2><p class="muted">Your own practice results.</p><div id="ownCards" class="cards"></div></section>
+<section class="panel"><h2>Parent dashboard</h2><p>Only players who granted you access appear here.</p>
+<div class="formrow"><label for="child">Player</label><select id="child"></select><button id="refresh" type="button">Refresh</button></div>
+<div id="childCards" class="cards" style="margin-top:16px"></div></section>
+<section class="panel"><h2>Share my learning with a parent</h2>
+<p>Both accounts must exist. Enter the parent's exact username while signed into the <strong>student's</strong> account.</p>
+<form id="grantForm" class="formrow"><input id="parentUser" placeholder="Parent username" maxlength="60" required>
+<button>Grant access</button></form>
+<p class="muted">You can revoke access at any time.</p><ul id="grants"></ul></section>
+</div>
+<p class="muted">Results show reported practice attempts, not validated ACT scores or a scientifically calibrated mastery percentage.</p>
+</main><script src="learning-dashboard.js" defer></script></body></html>
