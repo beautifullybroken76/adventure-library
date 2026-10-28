@@ -3,20 +3,22 @@
 const $=id=>document.getElementById(id),API='https://loki-api.pamsprogramming.com',TOKEN_KEY='adventure_library_token_v1';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let config,bank;
-try{const responses=await Promise.all(['adventure.json','questions.json'].map(x=>fetch('./'+x,{cache:'no-cache'})));
- if(responses.some(x=>!x.ok))throw Error('Could not load the adventure files');
- [config,bank]=await Promise.all(responses.map(x=>x.json()));
+try{const r=await Promise.all(['adventure.json','questions.json'].map(x=>fetch('./'+x,{cache:'no-cache'})));
+ if(r.some(x=>!x.ok))throw Error('Could not load the adventure files');[config,bank]=await Promise.all(r.map(x=>x.json()));
  if(!Array.isArray(bank.questions)||!Array.isArray(config.chapters))throw Error('Invalid adventure data');
-}catch(e){$('game').innerHTML='<h2>The castle gates are stuck</h2><p>'+esc(e.message)+'. Serve the folder from a website, not file://.</p>';return}
-const questions=bank.questions,total=questions.length;
-function jwt(){const t=localStorage.getItem(TOKEN_KEY)||'';try{const p=JSON.parse(atob(t.split('.')[1].replace(/-/g,'+').replace(/_/g,'/').padEnd(Math.ceil(t.split('.')[1].length/4)*4,'=')));return p.exp*1000>Date.now()+30000?t:''}catch{return ''}}
-function subject(t){try{const x=t.split('.')[1];const p=JSON.parse(atob(x.replace(/-/g,'+').replace(/_/g,'/').padEnd(Math.ceil(x.length/4)*4,'=')));return p.sub||p['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']||''}catch{return ''}}
+}catch(e){$('game').innerHTML='<h2>The castle gates are stuck</h2><p>'+esc(e.message)+'</p>';return}
+const questions=bank.questions,levels={apprentice:1,investigator:2,challenge:3};
+const levelNames={apprentice:'Apprentice · Foundations',investigator:'Investigator · Intermediate',challenge:'Master of Secrets · Challenge'};
+function jwt(){const t=localStorage.getItem(TOKEN_KEY)||'';try{const x=t.split('.')[1],p=JSON.parse(atob(x.replace(/-/g,'+').replace(/_/g,'/').padEnd(Math.ceil(x.length/4)*4,'=')));return p.exp*1000>Date.now()+30000?t:''}catch{return ''}}
+function subject(t){try{const x=t.split('.')[1],p=JSON.parse(atob(x.replace(/-/g,'+').replace(/_/g,'/').padEnd(Math.ceil(x.length/4)*4,'=')));return p.sub||p['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']||''}catch{return ''}}
 const player=()=>subject(jwt())||'guest';let currentPlayer=player();const saveKey=()=>`serpent-progress-v1:${currentPlayer}`;
-function load(){try{const s=JSON.parse(localStorage.getItem(saveKey()));if(s&&Array.isArray(s.completed))return s}catch{}return {completed:[],score:0}}
-let state=load(),selected=null,hint=false,started=0;
+function load(){try{const s=JSON.parse(localStorage.getItem(saveKey()));if(s&&Array.isArray(s.completed))return {completed:s.completed,score:Number(s.score)||0,level:levels[s.level]?s.level:'investigator',runs:s.runs||{}}}catch{}return {completed:[],score:0,level:'investigator',runs:{}}}
+let state=load(),mode='home',activeChapter=0,activeQuestions=[],position=0,selected=null,hint=false,started=0;
 function save(){try{localStorage.setItem(saveKey(),JSON.stringify(state))}catch(e){console.warn('Save unavailable',e)}}
+function run(ch){const key=state.level+':'+ch;return state.runs[key]||{completed:[],score:0}}
+function chapterQuestions(ch){return questions.filter(q=>q.chapter===ch&&q.difficulty===state.level)}
 function queueKey(){return `serpent-learning-queue-v1:${currentPlayer}`}
-function getQueue(){try{const x=JSON.parse(localStorage.getItem(queueKey())||'[]');return Array.isArray(x)?x:[]}catch{return []}}
+function getQueue(){try{const q=JSON.parse(localStorage.getItem(queueKey())||'[]');return Array.isArray(q)?q:[]}catch{return []}}
 function setQueue(q){try{localStorage.setItem(queueKey(),JSON.stringify(q));return true}catch{return false}}
 let flushing=false;
 async function flush(){const t=jwt(),owner=subject(t);if(flushing||!owner||owner!==currentPlayer)return;flushing=true;
@@ -24,27 +26,43 @@ async function flush(){const t=jwt(),owner=subject(t);if(flushing||!owner||owner
  const attempt=q[0];let r;try{r=await fetch(API+'/api/learning/attempts',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+t},body:JSON.stringify(attempt),cache:'no-store'})}catch{break}
  if(!r.ok){console.warn('Learning attempt retry pending',r.status);break}
  const latest=getQueue(),idx=latest.findIndex(x=>x.attemptId===attempt.attemptId);if(idx>=0){latest.splice(idx,1);setQueue(latest)}}}finally{flushing=false}}
-const levels={apprentice:1,investigator:2,challenge:3};
 function record(q,correct,usedHint){const t=jwt(),owner=subject(t);if(!owner||owner!==currentPlayer||!crypto.randomUUID)return;
  const skill=String(q.skill).toLowerCase();if(!['english','reading','math','science'].includes(skill)||!levels[q.difficulty]||!/^[a-zA-Z0-9._-]{1,120}$/.test(q.id))return;
  const queue=getQueue();if(queue.length>=300)return;
  queue.push({attemptId:crypto.randomUUID(),adventureId:'serpent',questionId:q.id,skillId:skill,difficulty:levels[q.difficulty],isCorrect:correct,usedHint,durationSeconds:Math.min(3600,Math.max(0,Math.round((Date.now()-started)/1000)))});
- if(setQueue(queue))void flush();}
-function updateSync(){$('sync').textContent=jwt()?'Signed in • ACT practice attempts are sent to your learning dashboard. Story progress stays in this browser.':'Playing as a guest • story progress stays in this browser. Sign in at the Adventure Library to record ACT practice.'}
-function render(){updateSync();const done=state.completed.length,q=questions.find(x=>!state.completed.includes(x.id));$('status').textContent=done+' / '+total+' puzzles solved';
- if(!q){$('game').innerHTML='<h2>✦ The Secret Is Yours</h2><p>The silver serpent uncurls from the stone. “I was never the lock,” it whispers. “I was the question.”</p><p>You open the final door—not to let danger in, but to let the truth out. Across the castle, windows bloom with morning light.</p><p><strong>Correct on first answer: '+state.score+' / '+total+'</strong></p><div class="controls"><button class="action" id="restart">Play again</button></div>';
- $('restart').onclick=()=>{if(confirm('Replay from the beginning? This resets story progress on this device but does not erase learning history.')){state={completed:[],score:0};save();render()}};return}
- const ch=config.chapters.find(x=>x.id===q.chapter),first=questions.find(x=>x.chapter===q.chapter)?.id===q.id;
- $('game').innerHTML='<div class="top"><span class="chip">Chapter '+q.chapter+': '+esc(ch.name)+'</span><span class="chip">'+esc(q.skill)+' · '+esc(q.difficulty)+'</span></div><div class="progress"><div style="width:'+(done/total*100)+'%"></div></div>'+(first?'<p class="lede">'+esc(ch.intro)+'</p>':'')+'<p class="muted">Clue '+(done+1)+' of '+total+'</p>'+(q.passage?'<blockquote class="feedback">'+esc(q.passage)+'</blockquote>':'')+'<h2>'+esc(q.question)+'</h2><div class="answers">'+q.answers.map((a,i)=>'<button class="answer" data-choice="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(a)+'</button>').join('')+'</div><div id="feedback" aria-live="polite"></div><div class="controls"><button class="action secondary" id="hint">Ask the serpent for a hint</button><button class="action" id="continue" disabled>Continue →</button></div>';
+ if(setQueue(queue))void flush()}
+function updateSync(){$('sync').textContent=jwt()?'Signed in · New answers sync to your learning dashboard. Story progress stays in this browser.':'Guest mode · story progress stays in this browser. Sign in at the Adventure Library to record ACT practice.'}
+function header(){updateSync();const all=Object.values(state.runs).reduce((n,r)=>n+(r.completed?.length||0),0);$('status').textContent=all+' puzzles solved across all paths'}
+function home(){mode='home';header();const chapterCards=config.chapters.map((ch,i)=>{
+ const qs=chapterQuestions(ch.id),r=run(ch.id),complete=qs.length>0&&qs.every(q=>r.completed.includes(q.id));
+ const unlocked=i===0||config.chapters.slice(0,i).every(c=>{const a=chapterQuestions(c.id),b=run(c.id);return a.length>0&&a.every(q=>b.completed.includes(q.id))});
+ const status=complete?'✦ Chamber unsealed':unlocked?'Ready to explore':'🔒 Complete the previous chamber';
+ const button=complete?'Replay this chamber':unlocked?'Enter chamber':'Locked';
+ return '<article class="chapter-card'+(unlocked?'':' locked')+'"><div class="eyebrow">CHAPTER '+ch.id+'</div><h3>'+esc(ch.name)+'</h3><p>'+esc(ch.intro)+'</p><p class="chapter-status">'+status+' · '+r.completed.length+' / '+qs.length+' clues</p><button class="action" data-chapter="'+ch.id+'" '+(unlocked?'':'disabled')+'>'+button+'</button></article>'}).join('');
+ const allQuestions=config.chapters.flatMap(c=>chapterQuestions(c.id)),done=allQuestions.filter(q=>run(q.chapter).completed.includes(q.id)).length;
+ $('game').innerHTML='<div class="eyebrow">INVESTIGATOR\'S DOSSIER</div><h2>Choose your path</h2><p class="muted">The silver serpent coils around a map of five sealed chambers. Which mystery will you unlock?</p><div class="difficulty"><label for="difficulty">Choose your difficulty</label><select id="difficulty">'+Object.keys(levels).map(l=>'<option value="'+l+'"'+(state.level===l?' selected':'')+'>'+esc(levelNames[l])+'</option>').join('')+'</select><p class="notice">Each level has its own chapter progress. Changing levels never erases completed paths.</p></div><p class="muted">'+done+' / '+allQuestions.length+' clues solved on this difficulty</p><div class="progress"><div style="width:'+(allQuestions.length?done/allQuestions.length*100:0)+'%"></div></div><div class="chapter-grid">'+chapterCards+'</div>';
+ $('difficulty').onchange=e=>{state.level=e.target.value;save();home()};
+ document.querySelectorAll('[data-chapter]').forEach(b=>b.onclick=()=>enterChapter(Number(b.dataset.chapter)));
+}
+function enterChapter(ch){const qs=chapterQuestions(ch);if(!qs.length)return;const r=run(ch);if(qs.every(q=>r.completed.includes(q.id))){if(!confirm('Replay this chamber? Your earlier learning records will remain on the dashboard.'))return;state.runs[state.level+':'+ch]={completed:[],score:0};save()}
+ activeChapter=ch;activeQuestions=qs;position=0;while(position<qs.length&&run(ch).completed.includes(qs[position].id))position++;question()}
+function question(){mode='question';header();if(position>=activeQuestions.length){chapterComplete();return}
+ const q=activeQuestions[position],ch=config.chapters.find(x=>x.id===activeChapter),r=run(activeChapter),first=position===0;
+ $('game').innerHTML='<div class="top"><span class="chip">Chapter '+activeChapter+': '+esc(ch.name)+'</span><span class="chip">'+esc(q.skill)+' · '+esc(levelNames[state.level])+'</span></div><div class="progress"><div style="width:'+(position/activeQuestions.length*100)+'%"></div></div>'+(first?'<p class="lede">'+esc(ch.intro)+'</p>':'')+'<p class="muted">Clue '+(position+1)+' of '+activeQuestions.length+'</p>'+(q.passage?'<blockquote class="feedback">'+esc(q.passage)+'</blockquote>':'')+'<h2>'+esc(q.question)+'</h2><div class="answers">'+q.answers.map((a,i)=>'<button class="answer" data-choice="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(a)+'</button>').join('')+'</div><div id="feedback" aria-live="polite"></div><div class="controls"><button class="action secondary" id="hint">Ask the serpent for a hint</button><button class="action" id="continue" disabled>Continue →</button><button class="action secondary" id="back">Save & exit</button></div>';
  selected=null;hint=false;started=Date.now();
- document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{if(selected!==null)return;selected=Number(b.dataset.choice);const correct=selected===q.correct;if(correct)state.score++;
- state.completed.push(q.id);save();record(q,correct,hint);
+ document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{if(selected!==null)return;selected=Number(b.dataset.choice);const correct=selected===q.correct;if(correct)r.score++;
+ r.completed.push(q.id);state.runs[state.level+':'+activeChapter]=r;save();record(q,correct,hint);
  document.querySelectorAll('[data-choice]').forEach(x=>{x.disabled=true;if(Number(x.dataset.choice)===q.correct)x.classList.add('correct');else if(Number(x.dataset.choice)===selected)x.classList.add('wrong')});
  $('feedback').innerHTML='<div class="feedback"><strong>'+(correct?'✦ The serpent approves.':'Not quite. The serpent shows you why.')+'</strong><p>'+esc(q.explain)+'</p></div>';
  $('hint').disabled=true;$('continue').disabled=false});
  $('hint').onclick=()=>{if(hint||selected!==null)return;hint=true;$('feedback').innerHTML='<div class="feedback"><strong>The silver serpent whispers:</strong> '+esc(q.hint)+'</div>'};
- $('continue').onclick=()=>{const last=questions.filter(x=>x.chapter===q.chapter).at(-1)?.id===q.id;if(last&&state.completed.length<total){$('game').innerHTML='<h2>✦ '+esc(ch.name)+' complete</h2><p>'+esc(ch.outro)+'</p><button class="action" id="nextChapter">Open the next door →</button>';$('nextChapter').onclick=render}else render()};}
+ $('continue').onclick=()=>{position++;question()};$('back').onclick=home;
+}
+function chapterComplete(){mode='complete';header();const ch=config.chapters.find(x=>x.id===activeChapter),r=run(activeChapter),last=activeChapter===config.chapters.at(-1).id;
+ $('game').innerHTML='<div class="eyebrow">CHAMBER UNSEALED</div><h2>✦ '+esc(ch.name)+'</h2><p>'+esc(ch.outro)+'</p><p>Correct on first answer: <strong>'+r.score+' / '+activeQuestions.length+'</strong></p>'+(last?'<p>The serpent raises its silver head. The castle has one fewer secret tonight.</p>':'')+'<button class="action" id="return">Return to the dossier →</button>';
+ $('return').onclick=home;
+}
 window.addEventListener('online',()=>void flush());document.addEventListener('visibilitychange',()=>{if(!document.hidden)void flush()});setInterval(()=>void flush(),20000);
-window.addEventListener('storage',e=>{if(e.key===TOKEN_KEY){currentPlayer=player();state=load();render();void flush()}});
-render();void flush();
+window.addEventListener('storage',e=>{if(e.key===TOKEN_KEY){currentPlayer=player();state=load();home();void flush()}});
+home();void flush();
 })();
